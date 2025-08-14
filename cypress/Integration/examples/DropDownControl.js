@@ -20,6 +20,8 @@ describe('My Second Test Suite', () => {
             }
 
         })
+
+        cy.get('#autocomplete').should('have.value','India')
     })
     
  })

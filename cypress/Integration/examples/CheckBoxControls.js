@@ -18,6 +18,8 @@ describe('My Second Test Suite', () => {
         // Pass values as parameter
         cy.get('[type="checkbox"]').check(['option1','option3'])
 
+        cy.get('[type="checkbox"]').check('option2')
+
     })
     
  })
