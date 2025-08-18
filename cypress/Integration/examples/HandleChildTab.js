@@ -9,6 +9,8 @@ describe('My Second Test Suite', () => {
  
         cy.get('#opentab').invoke('removeAttr','target').click()  // open tab in same browser window
         
+        // Cross domain issue
+        
         cy.origin('https://www.qaclickacademy.com/', () =>{
 
             cy.contains('About us').click()
