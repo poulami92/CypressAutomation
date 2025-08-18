@@ -30,7 +30,7 @@ describe('My First Test Suite', () => {
 
             // $el is a wrapped jQuery element
 
-            const vegText=$el.find('h4.product-name').text()
+            const vegText=$el.find('h4.product-name').text() // pure jquey now
             if(vegText.includes('Carrot'))
             {
                 cy.wrap($el).contains('ADD TO CART').click()

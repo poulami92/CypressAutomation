@@ -9,6 +9,9 @@ describe('My Second Test Suite', () => {
         // Pass value as parameter
         cy.get('select').select('option2').should('have.value','option2')
 
+        // select multiple values ib multiselect box
+        cy.get('select').select(['option2','option1'])
+
         // Dynamic Dropdow
         cy.get('#autocomplete').type('ind')
         cy.get('li.ui-menu-item div').each( ($el,index,$list) =>{
