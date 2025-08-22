@@ -1,9 +1,9 @@
 /// <reference types="Cypress" />
 
 
-describe('My Second Test Suite', () => {
+describe('Handle Calender', () => {
 
-    it('My Second Test Case', () => {
+    it('Handle Calender', () => {
 
         const monthNumber = '6'
         const date = '12'

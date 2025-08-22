@@ -3,7 +3,7 @@
 describe('Dropdown Control', () => {
 
     it('Dropdown Control', () => {
-        
+
         cy.visit('https://rahulshettyacademy.com/AutomationPractice/')
 
         // Static Dropdown 
@@ -13,7 +13,7 @@ describe('Dropdown Control', () => {
         // select multiple values ib multiselect box
         cy.get('select').select(['option2','option1'])
 
-        // Dynamic Dropdow
+        // Dynamic Dropdown
         cy.get('#autocomplete').type('ind')
         cy.get('li.ui-menu-item div').each( ($el,index,$list) =>{
 

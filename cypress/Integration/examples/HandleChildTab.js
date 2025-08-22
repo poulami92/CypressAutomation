@@ -1,11 +1,12 @@
 /// <reference types="Cypress" />
 
-describe('My ChildTab Test Suite', () => {
+describe('Handle Browser Tab', () => {
 
-    it('My First Test Case', () => {
+    it('Handle Browser Tab via Removing Target Attribute', () => {
+
         cy.visit('https://rahulshettyacademy.com/AutomationPractice/')
 
-        // cy.get('#opentab').click()   // open tab in separate browser tab 
+        // cy.get('#opentab').click()   // open in separate browser tab 
  
         cy.get('#opentab').invoke('removeAttr','target').click()  // open tab in same browser window
         
@@ -27,10 +28,15 @@ describe('My ChildTab Test Suite', () => {
             cy.get('.page-banner-cont h2').should('contain','About Us')
 
         })
+
+        cy.visit('https://rahulshettyacademy.com/AutomationPractice/')
+
+        cy.get('[type="radio"]').check('radio2').should('be.checked')
     
     })
 
-    it('My Second Test Case', () => {
+    it('Handle Browser Tab via Fetching Tab URL', () => {
+
         cy.visit('https://rahulshettyacademy.com/AutomationPractice/')
 
          // Fetching property value
