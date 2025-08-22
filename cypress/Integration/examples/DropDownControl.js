@@ -1,8 +1,9 @@
 /// <reference types="Cypress" />
 
-describe('My Second Test Suite', () => {
+describe('Dropdown Control', () => {
 
-    it('My Second Test Case', () => {
+    it('Dropdown Control', () => {
+        
         cy.visit('https://rahulshettyacademy.com/AutomationPractice/')
 
         // Static Dropdown 
