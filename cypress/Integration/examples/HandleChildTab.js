@@ -35,7 +35,7 @@ describe('Handle Browser Tab', () => {
     
     })
 
-    it('Handle Browser Tab via Fetching Tab URL', () => {
+    it('Handle Browser Tab via Fetching Tab URL with prop()', () => {
 
         cy.visit('https://rahulshettyacademy.com/AutomationPractice/')
 
@@ -48,6 +48,32 @@ describe('Handle Browser Tab', () => {
             cy.visit(url)   
 
             cy.origin(url, () =>{
+
+                cy.contains('About us').click()
+
+                cy.get('.page-banner-cont h2').should('have.text','About Us')
+
+            })
+
+            cy.visit('https://rahulshettyacademy.com/AutomationPractice/')
+
+            cy.get('[type="radio"]').check('radio2').should('be.checked')
+            
+        })         
+
+    })
+
+    it('Handle Browser Tab via Fetching Tab URL with invoke()', () => {
+
+        cy.visit('https://rahulshettyacademy.com/AutomationPractice/')
+
+         // Fetching property value
+
+        cy.get('#opentab').invoke('attr','href').then( (tabUrl)=>{       
+
+            cy.visit(tabUrl)   
+
+            cy.origin(tabUrl, () =>{
 
                 cy.contains('About us').click()
 
