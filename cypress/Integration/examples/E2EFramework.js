@@ -2,14 +2,34 @@
 
 describe('End to End Ecommerce Test', () => {
 
-    it('Submit Order', () => {
+    //execute before all it() blocks only one time
 
-        const pdtName ='Nokia Edge'
+    before(function() {
+
+        // loading external jason file data into test case
+        // resolving promise,then yield file content in js object as data
+
+        cy.fixture('example').then((data)=>{
+
+            // scope of data is limited to then() block only,local variable.To use data outside then() block
+            // have to assign data to class instance variable this.data
+            // this.data is accesible accross entire file,global variable
+
+            this.data=data
+        })
+
+    })
+
+    it('Submit Order', function() {   
+
+  //      Cypress.config('defaultCommandTimeout',10000) // for entire TC default timeout change
+
+        const pdtName =this.data.productName
 
         cy.visit('https://rahulshettyacademy.com/loginpagePractise/#')
 
-        cy.get('#username').type('rahulshettyacademy')
-        cy.get('#password').type('learning')
+        cy.get('#username').type(this.data.username)
+        cy.get('#password').type(this.data.password)
 
         cy.contains('Sign In').click()
 
@@ -57,8 +77,8 @@ describe('End to End Ecommerce Test', () => {
 
         cy.contains('Checkout').click()
         cy.get('#country').type('Ind')
-        cy.wait(2000)
-        cy.get('.suggestions ul a').filter(':contains("India")').click()
+        //cy.wait(2000)
+        cy.get('.suggestions ul a',{ timeout: 6000 }).filter(':contains("India")').click()
         cy.contains('Purchase').click()
         cy.get('.alert-success.alert-dismissible').should('contain','Success')
 
