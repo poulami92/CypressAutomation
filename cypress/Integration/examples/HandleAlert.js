@@ -25,12 +25,6 @@ describe('Handle Alert/Confirm Dialog', () => {
 
         cy.get('#alertbtn').click()
 
- 
-
-
- 
-
-
     })
     
  })
