@@ -23,3 +23,13 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+
+Cypress.Commands.add('submitFormDetails',()=>{
+
+    cy.get('#country').type('Ind')
+    //cy.wait(2000)
+    cy.get('.suggestions ul a',{ timeout: 6000 }).filter(':contains("India")').click()
+    cy.contains('Purchase').click()
+    cy.get('.alert-success.alert-dismissible').should('contain','Success')
+})
