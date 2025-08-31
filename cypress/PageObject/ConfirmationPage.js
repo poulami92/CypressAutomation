@@ -7,7 +7,7 @@ class ConfirmationPage
         // cy.get('.suggestions ul a',{ timeout: 6000 }).filter(':contains("India")').click()
         // cy.contains('Purchase').click()
 
-        cy.submitFormDetails()
+        cy.submitFormDetails() // customized cypress command
         
 
     }

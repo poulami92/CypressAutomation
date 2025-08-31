@@ -33,3 +33,19 @@ Cypress.Commands.add('submitFormDetails',()=>{
     cy.contains('Purchase').click()
     cy.get('.alert-success.alert-dismissible').should('contain','Success')
 })
+
+
+Cypress.Commands.add('clickProduct',(productName)=>{
+
+    cy.get('.products').find('.product').each(($el,index,$list) => {
+
+            // $el is a wrapped jQuery element
+
+            const vegText=$el.find('h4.product-name').text()
+            if(vegText.includes(productName))
+            {
+                cy.wrap($el).contains('ADD TO CART').click()
+            }
+
+        })
+})
