@@ -1,8 +1,8 @@
-/// <reference types="Cypress" />
+/// <reference types="cypress" />
 
-describe('My Second Test Suite', () => {
+describe('Element Visible Scenario', () => {
 
-    it('My Second Test Case', () => {
+    it('Element Visible Scenario', () => {
         cy.visit('https://rahulshettyacademy.com/AutomationPractice/')
 
         cy.get('#displayed-text').should('be.visible')

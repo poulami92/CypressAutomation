@@ -1,11 +1,11 @@
-/// <reference types="Cypress" />
-/// <reference types="Cypress-iframe" />
+/// <reference types="cypress" />
+/// <reference types="cypress-iframe" />
 
 import 'cypress-iframe'
 
-describe('My Second Test Suite', () => {
+describe('Frame handle', () => {
 
-    it('My Second Test Case', () => {
+    it('Frame handle', () => {
 
         cy.visit('https://rahulshettyacademy.com/AutomationPractice/')
 

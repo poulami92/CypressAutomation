@@ -1,14 +1,16 @@
 /// <reference types="cypress" />
 
-describe('My Second Test Suite', () => {
+describe('Mouse Over Scenario', () => {
 
-    it('My Second Test Case', () => {
+    it('Mouse Over Scenario', () => {
         cy.visit('https://rahulshettyacademy.com/AutomationPractice/')
         
         cy.get('div.mouse-hover-content').invoke('show')
+
+        // select element having text 'Top' from entire DOM
         cy.contains('Top').click()
 
-        //get current url
+        //get current url and validate 
         cy.url().should('include','top')
         
         // click forcefully on hidden element

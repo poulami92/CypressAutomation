@@ -1,8 +1,8 @@
-/// <reference types="Cypress" />
+/// <reference types="cypress" />
 
-describe('My Second Test Suite', () => {
+describe('Radio Buttin selection', () => {
 
-    it('My Second Test Case', () => {
+    it('Radio Buttin selection', () => {
         cy.visit('https://rahulshettyacademy.com/AutomationPractice/')
 
         // Radio Button
