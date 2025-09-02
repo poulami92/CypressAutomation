@@ -1,7 +1,7 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
-  projectId: 'p6uttc',
+
 
   //overite cypress default command timeout
   defaultCommandTimeout : 4000,
@@ -23,7 +23,5 @@ module.exports = defineConfig({
     supportFile : 'cypress/support/e2e.js',
     //generate test execution video
     video : true,
-    projectId : 'p6uttc'
-    
   },
 });
