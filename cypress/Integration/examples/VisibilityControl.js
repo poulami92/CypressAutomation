@@ -3,7 +3,9 @@
 describe('Element Visible Scenario', () => {
 
     it('Element Visible Scenario', () => {
-        cy.visit('https://rahulshettyacademy.com/AutomationPractice/')
+       // cy.visit('https://rahulshettyacademy.com/AutomationPractice/')
+
+        cy.visit(Cypress.env('url')+'AutomationPractice/')
 
         cy.get('#displayed-text').should('be.visible')
 

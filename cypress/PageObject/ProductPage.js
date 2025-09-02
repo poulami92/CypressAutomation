@@ -8,9 +8,9 @@ class ProductPage
 
     }
 
-    verifyCardLimit()
+    getCardCount()
     {
-       cy.get('app-card.col-lg-3').should('have.length',4)
+       return cy.get('app-card.col-lg-3')
     }
 
     selectProduct(productName)

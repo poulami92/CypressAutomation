@@ -20,6 +20,7 @@ describe('Customized Command', () => {
         // })
 
         cy.clickProduct('Carrot')
+        cy.clickProduct('Capsicum')
 
         cy.get('a[class="cart-icon"]').click()
         cy.contains('PROCEED TO CHECKOUT').click()

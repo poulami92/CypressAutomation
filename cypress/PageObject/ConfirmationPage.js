@@ -14,7 +14,7 @@ class ConfirmationPage
 
     getAlertMessage()
     {
-       cy.get('.alert-success.alert-dismissible').should('contain','Success')    
+       return cy.get('.alert-success.alert-dismissible')    
     }
 }
 

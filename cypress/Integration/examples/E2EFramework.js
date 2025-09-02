@@ -14,7 +14,7 @@ describe('End to End Ecommerce Test', () => {
         // loading external jason file data into test case
         // resolving promise,then yield file content in js object as data
 
-        cy.fixture('example').then((data)=>{
+        cy.fixture('TestData').then((data)=>{
 
             // scope of data is limited to then() block only,local variable.To use data outside then() block
             // have to assign data to class instance variable this.data
@@ -28,24 +28,33 @@ describe('End to End Ecommerce Test', () => {
 
     it('Submit Order', function() {   
 
-  //    Cypress.config('defaultCommandTimeout',10000) // for entire TC default timeout change
+         // for entire TC default timeout change
+         // accessing value from cypress.config.js
+
+  //    Cypress.config('defaultCommandTimeout',10000)
 
         const pdtName =this.data.productName
 
-        this.homePage.goTo("https://rahulshettyacademy.com/loginpagePractise/#")
+        this.homePage.goTo(Cypress.env('url')+"loginpagePractise/#")
         const productPage = this.homePage.login(this.data.username,this.data.password)
 
         productPage.pageValidation()
-        productPage.verifyCardLimit()
+
+        //Test paused untill we hit resume button from test runner
+        //cy.pause()
+
+        productPage.getCardCount().should('have.length',4)
         productPage.selectProduct(this.data.productName)
         productPage.selectFirstProduct()
         const cartPage= productPage.goToCart()
         
-        cartPage.validateTotalAmount()
+        cartPage.getTotalAmount().then((sum)=>{
+            expect(sum).to.be.lessThan(2000000)
+        })
         const confirmationPage= cartPage.goToConfirmation()
 
         confirmationPage.submitForm()
-        confirmationPage.getAlertMessage()
+        confirmationPage.getAlertMessage().should('contain','Success')
         
    })
 

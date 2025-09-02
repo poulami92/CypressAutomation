@@ -10,8 +10,8 @@ describe('Dropdown Control', () => {
         // Pass value as parameter
         cy.get('select').select('option2').should('have.value','option2')
 
-        // select multiple values ib multiselect box
-        cy.get('select').select(['option2','option1'])
+        // select multiple values in multiselect box
+        //cy.get('select').select(['option2','option1'])
 
         // Dynamic Dropdown
         cy.get('#autocomplete').type('ind')

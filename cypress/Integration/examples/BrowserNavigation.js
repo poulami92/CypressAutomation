@@ -4,7 +4,11 @@ describe('Browser Navigation', () => {
 
     it('Browser Navigation', () => {
 
-        cy.visit('https://rahulshettyacademy.com/seleniumPractise/#/')
+     //   cy.visit('https://rahulshettyacademy.com/seleniumPractise/#/')
+
+        // Put url as enviromental variable
+
+        cy.visit(Cypress.env('url')+'/seleniumPractise/#/')
         
         cy.contains('Top Deals').invoke('removeAttr','target').click()
 
