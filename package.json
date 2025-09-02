@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx cypress run",
+    "headtest" :"npx cypres run --headed",
+    "chrometest" :"npx cypres run --headed --browser chrome",
+    "recordDashBoardTest" :"npx cypress run --record --key fcc7487e-0e47-4ab5-bf26-14cee29eae04",
+    "E2ETest" : "npx cypress run --spec cypress/integration/examples/E2EFramework.js"
   },
   "author": "",
   "license": "ISC",

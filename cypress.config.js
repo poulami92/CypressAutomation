@@ -1,6 +1,7 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
+  projectId: 's7ghkm',
 
 
   //overite cypress default command timeout
@@ -13,6 +14,13 @@ module.exports = defineConfig({
     url : 'https://rahulshettyacademy.com/'
   },
 
+  //generate test execution video
+    video : true,
+  //retry fail tc 1 more time
+    retries: {
+      runMode: 1
+     },
+
   //Enable listenter so that reporter can catch test execution result
   e2e: {
     setupNodeEvents(on, config) {
@@ -20,8 +28,6 @@ module.exports = defineConfig({
     },
 
     specPattern : 'cypress/integration/examples/*.js',
-    supportFile : 'cypress/support/e2e.js',
-    //generate test execution video
-    video : true,
+    supportFile : 'cypress/support/e2e.js'
   },
 });
