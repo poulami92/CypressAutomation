@@ -9,6 +9,20 @@
     "recordDashBoardTest": "npx cypress run --record --key fcc7487e-0e47-4ab5-bf26-14cee29eae04",
     "E2ETest": "npx cypress run --spec cypress/integration/examples/E2EFramework.js"
   },
+
+  "cypress-cucumber-preprocessor":
+  {
+    "json":{
+      "enabled": true,
+      "output": "cypress/cucumberReports/results.json"
+    },
+
+     "html": {
+       "enabled": true,
+       "output": "cypress/cucumberReports/results.html"
+     }
+  },
+
   "author": "",
   "license": "ISC",
   "description": "",

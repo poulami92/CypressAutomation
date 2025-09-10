@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-09-10T12:38:18.974Z",
+    "end": "2025-09-10T12:38:25.210Z",
+    "duration": 6236,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "900584c3-3713-4655-880b-9f3d9ea73cf2",
+      "title": "",
+      "fullFile": "cypress\\integration\\examples\\CustomizedCommand.js",
+      "file": "cypress\\integration\\examples\\CustomizedCommand.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0080bb72-1d89-4b23-9799-44c7b15d9dce",
+          "title": "Customized Command",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Customized Command",
+              "fullTitle": "Customized Command Customized Command",
+              "timedOut": null,
+              "duration": 3924,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\integration\\\\examples\\\\CustomizedCommand.js\"\n}",
+              "code": "cy.visit('https://rahulshettyacademy.com/seleniumPractise/#/');\ncy.get('input.search-keyword').type('ca');\n// cy.get('.products').find('.product').each(($el,index,$list) => {\n//     // $el is a wrapped jQuery element\n//     const vegText=$el.find('h4.product-name').text()\n//     if(vegText.includes('Carrot'))\n//     {\n//         cy.wrap($el).contains('ADD TO CART').click()\n//     }\n// })\ncy.clickProduct('Carrot');\ncy.clickProduct('Capsicum');\ncy.get('a[class=\"cart-icon\"]').click();\ncy.contains('PROCEED TO CHECKOUT').click();\ncy.contains('Place Order').click();",
+              "err": {},
+              "uuid": "c337daf0-170d-4b8a-add6-9ef2bf5210de",
+              "parentUUID": "0080bb72-1d89-4b23-9799-44c7b15d9dce",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c337daf0-170d-4b8a-add6-9ef2bf5210de"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3924,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

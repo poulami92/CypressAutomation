@@ -1,0 +1,187 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "end-to-end-ecommerce-feature;ecommerce-product-delivery",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Ecommerce product delivery",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "I am on Ecommerce page",
+            "match": {
+              "location": "cypress/integration/examples/BDD/ecommerce/eCommStepDef.js:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 866000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "I login to application",
+            "match": {
+              "location": "cypress/integration/examples/BDD/ecommerce/eCommStepDef.js:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4988000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 6,
+            "name": "I add items to cart and checkout",
+            "match": {
+              "location": "cypress/integration/examples/BDD/ecommerce/eCommStepDef.js:31"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 699000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "Validate total price limit",
+            "match": {
+              "location": "cypress/integration/examples/BDD/ecommerce/eCommStepDef.js:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 93000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "Select the country and verify Thankyou",
+            "match": {
+              "location": "cypress/integration/examples/BDD/ecommerce/eCommStepDef.js:46"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5795000000
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "end-to-end-ecommerce-feature;ecommerce-product-delivery-cucumber-driven",
+        "keyword": "Scenario",
+        "line": 11,
+        "name": "Ecommerce product delivery cucumber driven",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 12,
+            "name": "I am on Ecommerce page",
+            "match": {
+              "location": "cypress/integration/examples/BDD/ecommerce/eCommStepDef.js:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 470000000
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "username",
+                      "password"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "rahulshettyacademy",
+                      "learning"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "When ",
+            "line": 13,
+            "name": "I login to application portal",
+            "match": {
+              "location": "cypress/integration/examples/BDD/ecommerce/eCommStepDef.js:23"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3611000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "I add items to cart and checkout",
+            "match": {
+              "location": "cypress/integration/examples/BDD/ecommerce/eCommStepDef.js:31"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 989000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "Validate total price limit",
+            "match": {
+              "location": "cypress/integration/examples/BDD/ecommerce/eCommStepDef.js:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 117000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 18,
+            "name": "Select the country and verify Thankyou",
+            "match": {
+              "location": "cypress/integration/examples/BDD/ecommerce/eCommStepDef.js:46"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5864000000
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Smoke",
+            "line": 10
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "end-to-end-ecommerce-feature",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "End to End Ecommerce Feature",
+    "tags": [],
+    "uri": "cypress\\integration\\examples\\BDD\\ecommerce.feature"
+  }
+]
