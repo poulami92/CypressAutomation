@@ -18,6 +18,14 @@ describe('Mouse Over Scenario', () => {
         cy.url().should('include','top')
 
     })
+
+    it('Mouse Over Scenario', () => {
+
+        cy.visit("https://www.ebay.com")
+        cy.get('#s0-1-4-8-11-0-dialog').invoke('show')
+        cy.contains('Summary').click()
+
+    })
     
  })
 
