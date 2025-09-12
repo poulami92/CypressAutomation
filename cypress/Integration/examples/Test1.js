@@ -6,7 +6,7 @@ describe('My First Test Suite', () => {
         cy.visit('https://rahulshettyacademy.com/seleniumPractise/#/')
 
         //Find element and type in it
-        cy.get('input.search-keyword').type('ca')
+        cy.get('input.search-keyword').type('ca1')
         cy.wait(2000)
 
         //find matching visible elements only and verify count

@@ -20,6 +20,13 @@ module.exports = defineConfig({
 
   // enable reporting
   reporter: 'cypress-mochawesome-reporter',
+  reporterOptions: {
+    reportDir: 'cypress/mochawesome-report',
+    overwrite: false,
+    html: true,
+    json: true,
+    embeddedScreenshots:true
+  },
 
   env :{
     url : 'https://rahulshettyacademy.com/'
