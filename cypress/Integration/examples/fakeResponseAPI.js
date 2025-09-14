@@ -4,6 +4,8 @@ describe('Fake API response', () => {
 
     it('Fake API response', () => {
 
+    // Mock response to return only 1 record to browser    
+
      cy.intercept(
         {
            method : 'GET',

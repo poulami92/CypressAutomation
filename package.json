@@ -7,7 +7,8 @@
     "headtest": "npx cypress run --headed",
     "chrometest": "npx cypress run --headed --browser chrome",
     "recordDashBoardTest": "npx cypress run --record --key fcc7487e-0e47-4ab5-bf26-14cee29eae04",
-    "E2ETest": "npx cypress run --spec cypress/integration/examples/E2EFramework.js"
+    "E2ETest": "npx cypress run --spec cypress/integration/examples/E2EFramework.js",
+    "HtmlReportGen": "marge cypress/mochawesome-report/.jsons mochawesome.json --reportDir cypress/mochawesome-report"
   },
   "cypress-cucumber-preprocessor": {
     "json": {
