@@ -32,9 +32,13 @@ describe('API response Validate', () => {
 
         cy.visit('https://rahulshettyacademy.com/angularAppdemo/')
         cy.get('.btn-primary').click()
+
         cy.wait('@bookRetrievals').then((interception) => {
 
+        expect(interception.response.statusCode).to.eq(200) 
         cy.get('tbody tr').should('have.length',interception.response.body.length)
+        expect(interception.response.body[1].isbn).to.eq('DSR')
+        cy.get('table tbody tr:nth-child(2) td:nth-child(2)').should('have.text',interception.response.body[1].isbn)
 
         })
         
@@ -55,6 +59,7 @@ describe('API response Validate', () => {
         cy.get('.btn-primary').click()
         cy.wait('@bookRetrievals').then((interception) => {
 
+        expect(interception.response.statusCode).to.eq(200) 
         cy.get('tbody tr').should('have.length',interception.response.body.length)
 
         })

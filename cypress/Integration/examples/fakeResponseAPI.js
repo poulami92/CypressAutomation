@@ -29,9 +29,34 @@ describe('Fake API response', () => {
 
         cy.visit('https://rahulshettyacademy.com/angularAppdemo/')
         cy.get('.btn-primary').click()
-        cy.wait('@bookRetrievals')
+        cy.wait('@bookRetrievals').its('response.statusCode').should('eq',200)
         cy.get('app-library-dashboard p').should('have.text','Oops only 1 Book available')
 
+    })
+
+    it('Fake 404 response', () => {
+
+    // Mock response to return 404   
+
+     cy.intercept(
+        {
+           method : 'GET',
+           url : 'https://rahulshettyacademy.com/Library/GetBook.php?AuthorName=shetty'
+        
+        },
+
+        {
+
+            statusCode : 404,
+            body: '404 Not Found!'
+
+        }).as('bookRetrievals')
+
+
+        cy.visit('https://rahulshettyacademy.com/angularAppdemo/')
+        cy.get('.btn-primary').click()
+        cy.wait('@bookRetrievals').its('response.statusCode').should('eq',404)
+  
     })
     
  })

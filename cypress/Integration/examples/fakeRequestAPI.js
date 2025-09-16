@@ -10,14 +10,14 @@ describe('Fake API request', () => {
 
     
        // req.url='https://rahulshettyacademy.com/Library/GetBook.php?AuthorName=malhotra'
-          req.query.AuthorName='malhotra'
+       req.query.AuthorName='datta'
 
            // hit server with mock request
-        //    req.continue((res)=>{
-        //     //expect(res.statusCode).to.equal(403)
-        //    })
+            //req.continue((res)=>{
+             //expect(res.statusCode).to.equal(403)
+           // })
 
-         // req.continue()
+          req.continue()
 
         }).as('dummyReqUrl')
 

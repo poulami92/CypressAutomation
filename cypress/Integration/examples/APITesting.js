@@ -8,14 +8,17 @@ describe('API testing', () => {
             {
                  "name": "Learn API",
                  "isbn": "dfrgds",
-                 "aisle": "22e6",
+                 "aisle": "34e9",
                  "author": "Jon P"
 
             }
         ).then(function(response)
         {
-            expect(response.body).to.have.property("Msg","successfully added")
             expect(response.status).to.eq(200)
+            expect(response.body).to.have.property("Msg","successfully added")
+            expect(response.body.Msg).to.eq("successfully added")
+            expect(response.headers.server).to.eq('Apache')
+            
         })  
 
     })
