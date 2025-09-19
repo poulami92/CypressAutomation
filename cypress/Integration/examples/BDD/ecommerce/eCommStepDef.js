@@ -22,7 +22,12 @@ When('I login to application',function(){
 
 When('I login to application portal',function(dataTable){
 
-    this.productPage = homePage.login(dataTable.rawTable[1][0],dataTable.rawTable[1][1])
+    //return array of objcets, from which gets the 1st object [{ username: 'user1', password: 'pass1' }] 
+
+    const user=dataTable.hashes()[0] 
+    this.productPage = homePage.login(user.username,user.password)
+
+    //this.productPage = homePage.login(dataTable.rawTable[1][0],dataTable.rawTable[1][1])
     this.productPage.pageValidation()
     this.productPage.getCardCount().should('have.length',4)
 

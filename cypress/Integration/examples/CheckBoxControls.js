@@ -25,7 +25,7 @@ describe('CheckBox Control', () => {
         // Pass values as parameter
         cy.get('[type="checkbox"]').check(['option1','option3'])
 
-        cy.get('[type="checkbox"]').check('option2')
+        cy.get('[type="checkbox"]').uncheck('option1')
 
     })
     

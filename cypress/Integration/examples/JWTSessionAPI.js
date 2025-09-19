@@ -1,5 +1,9 @@
 /// <reference types="cypress" />
+// const neatCSV=require('neat-csv') 
 
+import neatCSV from 'neat-csv'
+
+let productName
 describe('JWT Session', () => {         
     
     it('JWT Session', () => {
@@ -15,7 +19,12 @@ describe('JWT Session', () => {
                     
             }
         )
-        
+        cy.get('.card-body b').eq(1).then(($el)=>{
+
+            productName=$el.text()
+        })
+
+        //get last element from a list of same type elements
         cy.get('.card-body button:last-of-type').eq(1).click()
         cy.get('button[routerlink="/dashboard/cart"]').click()
         cy.contains('Checkout').click()
@@ -34,6 +43,20 @@ describe('JWT Session', () => {
         //cy.wait(2000)
         //cy.get('.order-summary button').click()
         cy.contains('Click To Download').click()
+
+        //read csv file and yield data to text variable
+
+        cy.readFile(Cypress.config('fileServerFolder')+"/cypress/downloads/order-invoice_Gpd.csv")
+        .then(async function(text){
+
+           //convert CSV data to jS array of objects
+            const csv = await neatCSV(text) // Await the promise
+            console.log(csv)
+            const csvPdtName=csv[0]["Product Name"]
+            expect(productName).to.equal(csvPdtName)
+        })
+
+        
 
     
     })  
