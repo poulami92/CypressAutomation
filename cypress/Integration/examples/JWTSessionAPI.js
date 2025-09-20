@@ -46,7 +46,9 @@ describe('JWT Session', () => {
 
         //read csv file and yield data to text variable
 
-        cy.readFile(Cypress.config('fileServerFolder')+"/cypress/downloads/order-invoice_Gpd.csv")
+        const filePath = Cypress.config('fileServerFolder')+"/cypress/downloads/order-invoice_Gpd.csv"
+
+        cy.readFile(filePath)
         .then(async function(text){
 
            //convert CSV data to jS array of objects
@@ -54,6 +56,12 @@ describe('JWT Session', () => {
             console.log(csv)
             const csvPdtName=csv[0]["Product Name"]
             expect(productName).to.equal(csvPdtName)
+        })
+
+        //validate contents of any file
+
+        cy.readFile(filePath).then((text)=>{
+            expect(text).to.include(productName)
         })
 
         

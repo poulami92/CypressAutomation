@@ -8,6 +8,9 @@ const {
 } = require("@badeball/cypress-cucumber-preprocessor/browserify");
 const sqlServer = require('cypress-sql-server');
 
+const excelToJson = require('convert-excel-to-json');
+const fs = require('fs');
+
 
 
 module.exports = defineConfig({
@@ -51,8 +54,8 @@ module.exports = defineConfig({
            "database": "PoulamiDB",
            "encrypt": true,
            "rowCollectionOnRequestCompletion" : true
-    }
-}
+          }
+        }
     
       //Enable listenter so that reporter can catch test execution result
       require('cypress-mochawesome-reporter/plugin')(on); 
@@ -67,8 +70,34 @@ module.exports = defineConfig({
      );
 
      //initialize sql plugin
-     tasks = sqlServer.loadDBPlugin(config.db);
+     //initialize excel to json conversion task
+
+     const tasks = {
+        ...sqlServer.loadDBPlugin(config.db),
+        excelToJsonConverter(filePath) {
+          const result = excelToJson({
+            source: fs.readFileSync(filePath)
+          });
+          return result;
+        }
+      };
      on('task', tasks);
+
+
+    //  on('task',{
+    //         excelToJsonConverter(filePath)
+
+    //         {
+    //              const result = excelToJson({
+    //              source: fs.readFileSync(filePath) 
+    //            });
+
+    //           return result 
+    //         }
+
+    //     })
+
+     
 
       // Make sure to return the config object as it might have been modified by the plugin.
       return config;

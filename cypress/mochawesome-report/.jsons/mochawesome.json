@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-09-20T18:17:44.383Z",
+    "end": "2025-09-20T18:17:57.380Z",
+    "duration": 12997,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "cf1f05de-1679-4973-8b01-c5fee1aeb859",
+      "title": "",
+      "fullFile": "cypress\\integration\\examples\\CheckBoxControls.js",
+      "file": "cypress\\integration\\examples\\CheckBoxControls.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "fb57966c-7374-4007-bdfe-64f63c8975a0",
+          "title": "CheckBox Control",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "CheckBox Control",
+              "fullTitle": "CheckBox Control CheckBox Control",
+              "timedOut": null,
+              "duration": 8813,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\integration\\\\examples\\\\CheckBoxControls.js\"\n}",
+              "code": "cy.visit('https://rahulshettyacademy.com/AutomationPractice/');\n// Checkbox check\ncy.get('#checkBoxOption1').check().should('be.checked').and('have.value', 'option1');\n// Uncheck check box\ncy.get('#checkBoxOption1').uncheck().should('not.be.checked');\n//Check multiple checkboxes\ncy.get('[type=\"checkbox\"]').check();\n//Uncheck multiple check boxes\ncy.get('[type=\"checkbox\"]').uncheck();\n// Pass values as parameter\ncy.get('[type=\"checkbox\"]').check(['option1', 'option3']);\ncy.get('[type=\"checkbox\"]').uncheck('option1');",
+              "err": {},
+              "uuid": "52d6b4c6-f676-4b38-9e63-78b6a731b1c3",
+              "parentUUID": "fb57966c-7374-4007-bdfe-64f63c8975a0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "52d6b4c6-f676-4b38-9e63-78b6a731b1c3"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8813,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\mochawesome-report\\.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "embeddedScreenshots": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
