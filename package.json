@@ -32,6 +32,7 @@
     "@badeball/cypress-cucumber-preprocessor": "^23.0.0",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.5",
     "cypress-iframe": "^1.0.1",
+    "cypress-sql-server": "^1.0.0",
     "neat-csv": "5.1.0"
   }
 }

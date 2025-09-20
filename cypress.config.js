@@ -6,6 +6,8 @@ const {
 const {
   preprendTransformerToOptions,
 } = require("@badeball/cypress-cucumber-preprocessor/browserify");
+const sqlServer = require('cypress-sql-server');
+
 
 
 module.exports = defineConfig({
@@ -40,6 +42,17 @@ module.exports = defineConfig({
   
   e2e: {
     async setupNodeEvents(on, config) {
+
+      config.db = {
+        "userName": "pd",
+        "password": "Kolkata@1",
+        "server": "poulamidemo.database.windows.net",
+        "options": {
+           "database": "PoulamiDB",
+           "encrypt": true,
+           "rowCollectionOnRequestCompletion" : true
+    }
+}
     
       //Enable listenter so that reporter can catch test execution result
       require('cypress-mochawesome-reporter/plugin')(on); 
@@ -52,6 +65,10 @@ module.exports = defineConfig({
         "file:preprocessor",
          browserify(preprendTransformerToOptions(config, browserify.defaultOptions)),
      );
+
+     //initialize sql plugin
+     tasks = sqlServer.loadDBPlugin(config.db);
+     on('task', tasks);
 
       // Make sure to return the config object as it might have been modified by the plugin.
       return config;

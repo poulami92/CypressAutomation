@@ -15,5 +15,10 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+
 //register report event
 import 'cypress-mochawesome-reporter/register'
+
+//register sql server event
+import sqlServer from 'cypress-sql-server';
+sqlServer.loadDBCommands();
