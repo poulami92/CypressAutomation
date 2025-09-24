@@ -15,6 +15,10 @@ describe('My Second Test Suite', () => {
 
         cy.get('@windowOpen').then ((stub) => {
 
+          cy.log(stub.getCall(0).args)
+
+          expect(stub.callCount).to.equal(1)
+
           const url = stub.getCall(0).args[0].replace('http://', 'https://')
 
           cy.visit(url)
@@ -37,5 +41,4 @@ describe('My Second Test Suite', () => {
        
     
  })
-
 
