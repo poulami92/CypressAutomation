@@ -2,9 +2,9 @@ import CartPage from './CartPage';
 
 class ProductPage
 {
-    pageValidation()
+    getPageValidation()
     {
-        cy.contains('Shop Name').should('be.visible')
+        return cy.contains('Shop Name')
 
     }
 

@@ -38,7 +38,7 @@ describe('End to End Ecommerce Test', () => {
         this.homePage.goTo(Cypress.env('url')+"loginpagePractise/#")
         const productPage = this.homePage.login(this.data.username,this.data.password)
 
-        productPage.pageValidation()
+        productPage.getPageValidation().should('be.visible')
 
         //Test paused untill we hit resume button from test runner
         //cy.pause()
