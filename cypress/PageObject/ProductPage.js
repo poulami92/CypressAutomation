@@ -28,11 +28,13 @@ class ProductPage
 
         // narrow down set of matched elements based on condition provided
 
-        cy.get('app-card.col-lg-3').filter(`:contains("${productName}")`).then( ($el)=>{
+        // cy.get('app-card.col-lg-3').filter(`:contains("${productName}")`).then( ($el)=>{
 
-            cy.wrap($el).contains('Add').click()
+        //     cy.wrap($el).contains('Add').click()
 
-        })
+        // })
+
+        cy.get('app-card.col-lg-3').filter(`:contains("${productName}")`).contains('Add').click()
         
 
     }
