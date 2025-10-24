@@ -50,7 +50,7 @@ Cypress.Commands.add('clickProduct',(productName)=>{
         })
 })
 
-Cypress.Commands.add('LoginAPI',()=>{
+Cypress.Commands.add('LoginAPI', ()=>{
 
     cy.request('POST','https://rahulshettyacademy.com/api/ecom/auth/login',
         {
