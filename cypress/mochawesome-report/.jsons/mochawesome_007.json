@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-10-22T19:58:18.666Z",
+    "end": "2025-10-22T19:58:40.018Z",
+    "duration": 21352,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "adb8b3e9-47db-46a3-9fc4-5f4973b32689",
+      "title": "",
+      "fullFile": "cypress\\integration\\examples\\E2EFramework.js",
+      "file": "cypress\\integration\\examples\\E2EFramework.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "594f092a-9666-4d27-88de-e53c3ac3803b",
+          "title": "End to End Ecommerce Test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Submit Order",
+              "fullTitle": "End to End Ecommerce Test Submit Order",
+              "timedOut": null,
+              "duration": 14059,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\integration\\\\examples\\\\E2EFramework.js\"\n}",
+              "code": "// for entire TC default timeout change\n// accessing value from cypress.config.js\n//    Cypress.config('defaultCommandTimeout',10000)\nvar pdtName = this.data.productName;\nthis.homePage.goTo(Cypress.env('url') + \"loginpagePractise/#\");\nvar productPage = this.homePage.login(this.data.username, this.data.password);\nproductPage.getPageValidation().should('be.visible');\n//Test paused untill we hit resume button from test runner\n//cy.pause()\nproductPage.getCardCount().should('have.length', 4);\nproductPage.selectProduct(this.data.productName);\nproductPage.selectFirstProduct();\nvar cartPage = productPage.goToCart();\ncartPage.getTotalAmount().then(function (sum) {\n  expect(sum).to.be.lessThan(2000000);\n});\nvar confirmationPage = cartPage.goToConfirmation();\nconfirmationPage.submitForm();\nconfirmationPage.getAlertMessage().should('contain', 'Success');",
+              "err": {},
+              "uuid": "5e00a5ba-8bdb-496f-84ea-374dbe561b7d",
+              "parentUUID": "594f092a-9666-4d27-88de-e53c3ac3803b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5e00a5ba-8bdb-496f-84ea-374dbe561b7d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 14059,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\mochawesome-report\\.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "embeddedScreenshots": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -54,8 +54,8 @@ Cypress.Commands.add('LoginAPI',()=>{
 
     cy.request('POST','https://rahulshettyacademy.com/api/ecom/auth/login',
         {
-            userEmail: "Gpd@gmail.com",
-            userPassword: "Kolkata@1"
+            "userEmail": "Gpd@gmail.com",
+            "userPassword": "Kolkata@1"
         }
     ).then((response)=>{
         expect(response.status).to.eq(200)

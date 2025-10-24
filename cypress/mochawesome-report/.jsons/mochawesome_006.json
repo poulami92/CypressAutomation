@@ -1,0 +1,110 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-10-22T19:52:22.544Z",
+    "end": "2025-10-22T19:53:35.527Z",
+    "duration": 72983,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d602e030-cd59-429d-a66d-eccd4304dde9",
+      "title": "",
+      "fullFile": "cypress\\integration\\examples\\E2EFramework.js",
+      "file": "cypress\\integration\\examples\\E2EFramework.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b99f5b69-9094-42c7-bafe-b8916dc9d81a",
+          "title": "End to End Ecommerce Test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Submit Order",
+              "fullTitle": "End to End Ecommerce Test Submit Order",
+              "timedOut": null,
+              "duration": 791,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-failed\",\n    \"value\": \"cypress\\\\integration\\\\examples\\\\E2EFramework.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"\\\\E2EFramework.js\\\\End to End Ecommerce Test -- Submit Order (failed).png\"\n      ],\n      [\n        \"\\\\E2EFramework.js\\\\End to End Ecommerce Test -- Submit Order (failed) (attempt 2).png\"\n      ]\n    ]\n  }\n]",
+              "code": "// for entire TC default timeout change\n// accessing value from cypress.config.js\n//    Cypress.config('defaultCommandTimeout',10000)\nvar pdtName = this.data.productName;\nthis.homePage.goTo(Cypress.env('url') + \"loginpagePractise/#\");\nvar productPage = this.homePage.login(this.data.username, this.data.password);\nproductPage.getPageValidation().should('be.visible');\n//Test paused untill we hit resume button from test runner\n//cy.pause()\nproductPage.getCardCount().should('have.length', 4);\nproductPage.selectProduct(this.data.productName);\nproductPage.selectFirstProduct();\nvar cartPage = productPage.goToCart();\ncartPage.getTotalAmount().then(function (sum) {\n  expect(sum).to.be.lessThan(2000000);\n});\nvar confirmationPage = cartPage.goToConfirmation();\nconfirmationPage.submitForm();\nconfirmationPage.getAlertMessage().should('contain', 'Success');",
+              "err": {
+                "message": "TypeError: Cannot read properties of undefined (reading 'productName')",
+                "estack": "TypeError: Cannot read properties of undefined (reading 'productName')\n    at Context.eval (cypress/integration/examples/E2EFramework.js:36:33)\n    at runnable.fn (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:141938:19)\n    at callFn (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:161016:21)\n    at Runnable.run (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:161003:7)\n    at <unknown> (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:167096:30)\n    at PassThroughHandlerContext.finallyHandler (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:1546:18)",
+                "diff": null
+              },
+              "uuid": "3de74165-45f8-46cb-9e76-07b550d3a12d",
+              "parentUUID": "b99f5b69-9094-42c7-bafe-b8916dc9d81a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "3de74165-45f8-46cb-9e76-07b550d3a12d"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 791,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\mochawesome-report\\.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "embeddedScreenshots": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
